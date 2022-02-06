@@ -2,6 +2,9 @@ import React,{useEffect,useState,useRef} from "react";
 import styled from "styled-components";
 import MyButton from "./MyButton";
 import { gsap } from "gsap";
+import { HiOutlineMailOpen } from "react-icons/hi";
+import { FaGithub,FaLinkedin,FaTwitterSquare } from "react-icons/fa";
+
 
 const ContactWrapper = styled.div`
     display: flex;
@@ -41,18 +44,21 @@ function ButtonContainer(){
     };
     useEffect(
         () => {
-            gsap.from(q(".navlink"),{x: -150,opacity: 0 ,stagger : 0.2})
+            gsap.from(q(".navrow"),{x: -150,opacity: 0 ,stagger : 0.2})
         },[]
     )
     
-    const links = [["mailto:1928084@kiit.ac.in","Mail me"],["https://github.com/ArpitDarklord","Github"],["https://www.linkedin.com/in/arpit-mallick-14900a191/","Linkedin"],["https://twitter.com/GgDarklord","Twitter"]]
+    const links = [["mailto:1928084@kiit.ac.in","Mail me",HiOutlineMailOpen,1],["https://github.com/ArpitDarklord","Github",FaGithub,2],["https://www.linkedin.com/in/arpit-mallick-14900a191/","Linkedin",FaLinkedin,3],["https://twitter.com/GgDarklord","Twitter",FaTwitterSquare,4]]
     return(
         <nav ref={refContact}>
             {
-                links.map((link)=>
-                    <a href={link[0]} className = "navlink" onMouseEnter={onEnter} onMouseLeave={onLeave}> 
-                     { link[1] }
-                    </a>)
+                links.map(( [link,name,Icon,k])=>
+                    <div className= "navrow" key={k} onMouseEnter={onEnter} onMouseLeave={onLeave}>
+                     <Icon />
+                    <a href={link} className = "navlink" > 
+                     { name }
+                    </a>
+                    </div>)
             }
         </nav>
     )
