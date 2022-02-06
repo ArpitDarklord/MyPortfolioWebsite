@@ -2,7 +2,7 @@ import React,{useEffect,useState,useRef} from "react";
 import styled from "styled-components";
 import MyButton from "./MyButton";
 import { gsap } from "gsap";
-import { HiOutlineMailOpen } from "react-icons/hi";
+import { HiMail } from "react-icons/hi";
 import { FaGithub,FaLinkedin,FaTwitterSquare } from "react-icons/fa";
 
 
@@ -48,7 +48,7 @@ function ButtonContainer(){
         },[]
     )
     
-    const links = [["mailto:1928084@kiit.ac.in","Mail me",HiOutlineMailOpen,1],["https://github.com/ArpitDarklord","Github",FaGithub,2],["https://www.linkedin.com/in/arpit-mallick-14900a191/","Linkedin",FaLinkedin,3],["https://twitter.com/GgDarklord","Twitter",FaTwitterSquare,4]]
+    const links = [["mailto:1928084@kiit.ac.in","Mail me",HiMail,1],["https://github.com/ArpitDarklord","Github",FaGithub,2],["https://www.linkedin.com/in/arpit-mallick-14900a191/","Linkedin",FaLinkedin,3],["https://twitter.com/GgDarklord","Twitter",FaTwitterSquare,4]]
     return(
         <nav ref={refContact}>
             {
